@@ -1,2 +1,1 @@
-# any-stuffed
-Contain any(not all) stuff have worked on
+This repositories only stored for reference which could be useful or useless, not quite solid project.
