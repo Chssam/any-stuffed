@@ -1,0 +1,70 @@
+[workspace.package]
+description = "Refresh when app on & hide."
+authors = ["Chssam"]
+license = "MIT"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.87"
+publish = false
+
+# Ref how it build https://github.com/Summit-Sailors/dioxus-browser-extension-builder
+
+[workspace]
+members = [
+    "refresher/popup",
+    "refresher/content",
+    "refresher/background",
+    "refresher/common",
+]
+resolver = "2"
+
+[profile.dev.package."*"]
+codegen-units = 1
+debug = false
+incremental = false
+opt-level = "z"
+strip = true
+
+
+[profile.release]
+codegen-units = 1
+debug = false
+incremental = false
+lto = true
+opt-level = "z"
+panic = "abort"
+strip = true
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
+
+[workspace.dependencies]
+common = { path = "./refresher/common" }
+
+dioxus = "0.6"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+console_error_panic_hook = "0.1"
+gloo = { version = "0.11", default-features = false, features = [
+    "utils",
+    "console",
+] }
+js-sys = "0.3"
+serde = "1.0"
+serde_json = "1.0"
+serde-wasm-bindgen = "0.6"
+web-sys = "0.3"
+anyhow = "1.0"
+url = "2.5"
+# bon = "3.6"
+
+[workspace.lints.clippy]
+type_complexity = "warn"
+deprecated_semver = "deny"

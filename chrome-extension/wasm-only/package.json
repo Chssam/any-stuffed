@@ -1,0 +1,10 @@
+{
+    "name": "refresher",
+    "version": "0.1.0",
+    "description": "Refresh when app on Youtube.",
+    "scripts": {
+        "clean": "del /Q pkg; target; dist; dist\\pkg",
+        "copy": "copy pkg dist && copy js dist && copy manifest.json dist",
+        "build": "npm run clean && wasm-pack build --target web && npm run copy"
+    }
+}

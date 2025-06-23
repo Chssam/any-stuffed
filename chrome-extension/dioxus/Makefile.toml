@@ -1,0 +1,24 @@
+# [tasks.start]
+# command = "dx"
+# args = ["serve", "--platform", "web"]
+
+# [tasks.cleaned]
+# script = "del /Q pkg; target; extensions; dist"
+
+# [tasks.copy]
+# script = "xcopy pkg extensions /s /q && copy constant extensions"
+
+# [tasks.build]
+# command = "wasm-pack"
+# args = ["build", "--target", "web"]
+
+# [tasks.ext]
+# dependencies = ["cleaned", "build", "copy"]
+
+[tasks.start]
+command = "dx-ext"
+args = ["build"]
+
+[tasks.release]
+command = "dx-ext"
+args = ["build", "--mode", "release"]

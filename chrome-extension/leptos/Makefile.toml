@@ -1,0 +1,19 @@
+[tasks.start]
+command = "trunk"
+args = ["serve", "--open"]
+
+[tasks.cleaned]
+script = "del /Q pkg; target; extensions"
+
+[tasks.copy]
+script = "copy pkg extensions && copy constant extensions"
+
+[tasks.build]
+command = "wasm-pack"
+args = ["build", "--target", "web"]
+
+[tasks.ext]
+dependencies = ["cleaned", "build", "copy"]
+
+[tasks.repair]
+script = "mkdir extensions; constant"

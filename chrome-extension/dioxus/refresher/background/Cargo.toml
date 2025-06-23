@@ -1,0 +1,23 @@
+[package]
+name = "background"
+version.workspace = true
+authors.workspace = true
+description.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+common.workspace = true
+
+wasm-bindgen.workspace = true
+wasm-bindgen-futures.workspace = true
+console_error_panic_hook.workspace = true
+gloo.workspace = true
+js-sys.workspace = true
+serde-wasm-bindgen.workspace = true
+
+[lints]
+workspace = true

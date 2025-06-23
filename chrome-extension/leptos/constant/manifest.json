@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Refresher-Leptos",
+    "version": "0.1.0",
+    "author": "@Chssam",
+    "description": "Refresh when app on Youtube.",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "*.wasm",
+                "*.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "permissions": [
+        "webRequest",
+        "scripting",
+        "activeTab"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+    }
+}
