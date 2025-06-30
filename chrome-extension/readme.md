@@ -15,7 +15,7 @@ and
 
 The way I follow up by order in success make it work: 
 
-+ wasm-bindgen only - https://github.com/theberrigan/rust-wasm-chrome-ext
++ wasm-bindgen only - https://github.com/theberrigan/rust-wasm-chrome-ext & https://github.com/rimutaka/spotify-playlist-builder
 
 + Leptos - Didn't find reference, but example would work if you try wasm-bindgen only first.
 Later follow by Leptos's [example](https://github.com/leptos-rs/leptos/tree/main/examples)
